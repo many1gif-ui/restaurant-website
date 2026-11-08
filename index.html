@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>La Bella Cucina | Fine Dining Restaurant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">🍷 La Bella Cucina</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-btn">Reserve a Table</a>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-sub">Welcome to</p>
+      <h1 class="hero-title">La Bella Cucina</h1>
+      <p class="hero-desc">An unforgettable dining experience in the heart of the city.<br>Authentic Italian flavors, crafted with passion.</p>
+      <div class="hero-btns">
+        <a href="#menu" class="btn-primary">Explore Menu</a>
+        <a href="#contact" class="btn-secondary">Book a Table</a>
+      </div>
+    </div>
+    <div class="scroll-down" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">↓</div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img">
+          <div class="img-box">
+            <div class="img-placeholder chef">👨‍🍳</div>
+          </div>
+          <div class="about-badge">
+            <span class="badge-num">15+</span>
+            <span class="badge-text">Years of Experience</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="section-label">Our Story</p>
+          <h2 class="section-title">Passion for Food,<br>Love for People</h2>
+          <p class="about-desc">Founded in 2009, La Bella Cucina has been serving authentic Italian cuisine with a modern twist. Our head chef Marco Rossi trained in Florence and brings the true taste of Italy to every plate.</p>
+          <p class="about-desc">We believe that great food is more than just a meal — it's an experience that brings people together.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">500+</span>
+              <span class="stat-label">Happy Guests Daily</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">80+</span>
+              <span class="stat-label">Menu Items</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">12</span>
+              <span class="stat-label">Awards Won</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🌿</div>
+          <h3>Fresh Ingredients</h3>
+          <p>We source only the freshest local and imported ingredients every single day.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👨‍🍳</div>
+          <h3>Expert Chefs</h3>
+          <p>Our team of world-class chefs brings decades of culinary expertise to your plate.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🍷</div>
+          <h3>Fine Wine Selection</h3>
+          <p>Over 200 carefully curated wines from the world's finest vineyards.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✨</div>
+          <h3>Elegant Atmosphere</h3>
+          <p>A sophisticated ambiance perfect for any occasion — from dates to celebrations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <p class="section-label center">Our Menu</p>
+      <h2 class="section-title center">Culinary Masterpieces</h2>
+      <div class="menu-tabs">
+        <button class="tab-btn active" onclick="filterMenu('all')">All</button>
+        <button class="tab-btn" onclick="filterMenu('starter')">Starters</button>
+        <button class="tab-btn" onclick="filterMenu('main')">Main Course</button>
+        <button class="tab-btn" onclick="filterMenu('dessert')">Desserts</button>
+        <button class="tab-btn" onclick="filterMenu('drinks')">Drinks</button>
+      </div>
+      <div class="menu-grid" id="menuGrid">
+
+        <div class="menu-card" data-cat="starter">
+          <div class="menu-emoji">🥗</div>
+          <div class="menu-info">
+            <h4>Burrata Salad</h4>
+            <p>Fresh burrata, heirloom tomatoes, basil oil, sea salt</p>
+            <div class="menu-footer">
+              <span class="menu-tag">Starter</span>
+              <span class="menu-price">$18</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" data-cat="starter">
+          <div class="menu-emoji">🦑</div>
+          <div class="menu-info">
+            <h4>Grilled Calamari</h4>
+            <p>Tender calamari with lemon butter and fresh herbs</p>
+            <div class="menu-footer">
+              <span class="menu-tag">Starter</span>
+              <span class="menu-price">$22</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" data-cat="main">
+          <div class="menu-emoji">🍝</div>
+          <div class="menu-info">
+            <h4>Truffle Tagliatelle</h4>
+            <p>Homemade pasta, black truffle, parmesan, butter</p>
+            <div class="menu-footer">
+              <span class="menu-tag">Main</span>
+              <span class="menu-price">$38</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" data-cat="main">
+          <div class="menu-emoji">🥩</div>
+          <div class="menu-info">
+            <h4>Beef Tenderloin</h4>
+            <p>8oz wagyu beef, rosemary jus, truffle mashed potato</p>
+            <div class="menu-footer">
+              <span class="menu-tag">Main</span>
+              <span class="menu-price">$65</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" data-cat="main">
+          <div class="menu-emoji">🐟</div>
+          <div class="menu-info">
+            <h4>Sea Bass Fillet</h4>
+            <p>Pan-seared sea bass, saffron risotto, citrus beurre blanc</p>
+            <div class="menu-footer">
+              <span class="menu-tag">Main</span>
+              <span class="menu-price">$48</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" data-cat="dessert">
+          <div class="menu-emoji">🍮</div>
+          <div class="menu-info">
+            <h4>Tiramisu Classico</h4>
+            <p>Traditional Italian tiramisu with mascarpone & espresso</p>
+            <div class="menu-footer">
+              <span class="menu-tag">Dessert</span>
+              <span class="menu-price">$14</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" data-cat="dessert">
+          <div class="menu-emoji">🍫</div>
+          <div class="menu-info">
+            <h4>Chocolate Fondant</h4>
+            <p>Warm dark chocolate cake, vanilla ice cream, raspberries</p>
+            <div class="menu-footer">
+              <span class="menu-tag">Dessert</span>
+              <span class="menu-price">$16</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" data-cat="drinks">
+          <div class="menu-emoji">🍷</div>
+          <div class="menu-info">
+            <h4>Barolo 2018</h4>
+            <p>Premium red wine from Piedmont, Italy</p>
+            <div class="menu-footer">
+              <span class="menu-tag">Wine</span>
+              <span class="menu-price">$85</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <p class="section-label center">Gallery</p>
+      <h2 class="section-title center">A Feast for the Eyes</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item gi-large">
+          <div class="gallery-placeholder">🍽️</div>
+          <div class="gallery-overlay"><span>Fine Dining</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder">🍝</div>
+          <div class="gallery-overlay"><span>Pasta</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder">🥩</div>
+          <div class="gallery-overlay"><span>Meat Dishes</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder">🍰</div>
+          <div class="gallery-overlay"><span>Desserts</span></div>
+        </div>
+        <div class="gallery-item gi-wide">
+          <div class="gallery-placeholder">🍷</div>
+          <div class="gallery-overlay"><span>Wine Selection</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <p class="section-label center">Reviews</p>
+      <h2 class="section-title center">What Our Guests Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Absolutely incredible experience! The truffle pasta was the best I've ever had. We'll definitely be back for every anniversary!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">S</div>
+            <div>
+              <strong>Sarah Johnson</strong>
+              <span>New York, USA</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card featured">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"La Bella Cucina is a gem. The ambiance, the service, the food — everything was perfect. Chef Marco truly has a gift!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">M</div>
+            <div>
+              <strong>Michael Chen</strong>
+              <span>London, UK</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"We hosted our company dinner here and everyone was blown away. Professional service and extraordinary food. Highly recommended!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">A</div>
+            <div>
+              <strong>Anna Petrov</strong>
+              <span>Dubai, UAE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / RESERVATION -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="section-label">Find Us</p>
+          <h2 class="section-title">Reserve Your Table</h2>
+          <p class="contact-desc">Join us for an unforgettable dining experience. We recommend booking in advance, especially on weekends.</p>
+          <div class="info-items">
+            <div class="info-item">
+              <span class="info-icon">📍</span>
+              <div>
+                <strong>Address</strong>
+                <p>123 Gourmet Street, Downtown, New York, NY 10001</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">📞</span>
+              <div>
+                <strong>Phone</strong>
+                <p>+1 (555) 123-4567</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">🕐</span>
+              <div>
+                <strong>Hours</strong>
+                <p>Mon–Thu: 12:00 – 23:00<br>Fri–Sun: 12:00 – 00:00</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">✉️</span>
+              <div>
+                <strong>Email</strong>
+                <p>hello@labellacucina.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form onsubmit="submitForm(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" placeholder="John" required/>
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" placeholder="Doe" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="john@example.com" required/>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Date</label>
+                <input type="date" required/>
+              </div>
+              <div class="form-group">
+                <label>Time</label>
+                <select required>
+                  <option value="">Select time</option>
+                  <option>12:00</option>
+                  <option>13:00</option>
+                  <option>14:00</option>
+                  <option>18:00</option>
+                  <option>19:00</option>
+                  <option>20:00</option>
+                  <option>21:00</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Number of Guests</label>
+              <select required>
+                <option value="">Select guests</option>
+                <option>1 person</option>
+                <option>2 people</option>
+                <option>3-4 people</option>
+                <option>5-6 people</option>
+                <option>7+ people</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Special Requests</label>
+              <textarea placeholder="Allergies, special occasions, etc." rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Reserve My Table 🍽️</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">🍷 La Bella Cucina</div>
+          <p>Where every meal tells a story. Experience the finest Italian cuisine in an elegant setting.</p>
+          <div class="social-links">
+            <a href="#">📘</a>
+            <a href="#">📸</a>
+            <a href="#">🐦</a>
+            <a href="#">▶️</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Opening Hours</h4>
+          <ul>
+            <li>Monday – Thursday</li>
+            <li>12:00 PM – 11:00 PM</li>
+            <li style="margin-top:8px">Friday – Sunday</li>
+            <li>12:00 PM – 12:00 AM</li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contact</h4>
+          <ul>
+            <li>📍 123 Gourmet Street, NY</li>
+            <li>📞 +1 (555) 123-4567</li>
+            <li>✉️ hello@labellacucina.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 La Bella Cucina. All rights reserved. | Designed with ❤️</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SUCCESS MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-box">
+      <div class="modal-icon">✅</div>
+      <h3>Reservation Confirmed!</h3>
+      <p>Thank you! We'll contact you shortly to confirm your table. See you soon!</p>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
